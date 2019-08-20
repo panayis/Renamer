@@ -70,14 +70,14 @@ namespace ABPRenamer
             //Show progress bar
             progressBar1.Visible = true;
 
-            backgroundWorker1.RunWorkerAsync(arguments);
+            backgroundWorker.RunWorkerAsync(arguments);
         }
         private void StopMethod()
         {
-            if (backgroundWorker1.IsBusy)
+            if (backgroundWorker.IsBusy)
             {
                 MessageBox.Show("Cancelling..");
-                backgroundWorker1.CancelAsync();
+                backgroundWorker.CancelAsync();
             }
         }
         private void Log(string value)
@@ -104,7 +104,7 @@ namespace ABPRenamer
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void BackgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+        private void BackgroundWorker_DoWork(object sender, DoWorkEventArgs e)
         {
             BackgroundWorker work = (BackgroundWorker)sender;
             Arguments arguments = e.Argument as Arguments;
@@ -136,14 +136,14 @@ namespace ABPRenamer
             Log($"================= File name and content renaming completed =================time spent: {sp.ElapsedMilliseconds}(s)\r\n");
 
             Log($"================= Completed =================Time-spent catalog:{ spdir }s File time spent: { sp.ElapsedMilliseconds}s\r\n");
-
         }
+
         /// <summary>
         /// workerCallback method for returning reports
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void BackgroundWorker1_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        private void BackgroundWorker_ProgressChanged(object sender, ProgressChangedEventArgs e)
         {
             //e.UserState Send back the custom parameters passed by the report
 
@@ -157,7 +157,7 @@ namespace ABPRenamer
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void BackgroundWorker1_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        private void BackgroundWorker_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
             //Restore the status of the start button
             btnStart.Text = "Execute";
@@ -173,7 +173,7 @@ namespace ABPRenamer
             }
             else//Your business logic
             {
-                if (DialogResult.Yes == MessageBox.Show("Processing completed, whether to shut down the system？", "Prompt", MessageBoxButtons.YesNo, MessageBoxIcon.Information))
+                if (DialogResult.Yes == MessageBox.Show("Processing completed successfully. Terminate Abp Renamer？", "Prompt", MessageBoxButtons.YesNo, MessageBoxIcon.Information))
                 {
                     BtnClose_Click(null, new MyEventArgs());
                 }
@@ -371,41 +371,41 @@ namespace ABPRenamer
 
             if (!string.IsNullOrWhiteSpace(txtFilter.Text))
             {
-                Settings1.Default.setFilter = txtFilter.Text.Trim();
+                Settings.Default.setFilter = txtFilter.Text.Trim();
             }
             if (!string.IsNullOrWhiteSpace(txtOldCompanyName.Text))
             {
-                Settings1.Default.setOldCompanyName = txtOldCompanyName.Text.Trim();
+                Settings.Default.setOldCompanyName = txtOldCompanyName.Text.Trim();
             }
             if (!string.IsNullOrWhiteSpace(txtOldProjectName.Text))
             {
-                Settings1.Default.setOldProjectName = txtOldProjectName.Text.Trim();
+                Settings.Default.setOldProjectName = txtOldProjectName.Text.Trim();
             }
             if (!string.IsNullOrWhiteSpace(txtOldAreaName.Text))
             {
-                Settings1.Default.setOldAreaName = txtOldAreaName.Text.Trim();
+                Settings.Default.setOldAreaName = txtOldAreaName.Text.Trim();
             }
             if (!string.IsNullOrWhiteSpace(txtRootDir.Text))
             {
-                Settings1.Default.setRootDir = txtRootDir.Text.Trim();
+                Settings.Default.setRootDir = txtRootDir.Text.Trim();
             }
-            Settings1.Default.setNewCompanyName = txtNewCompanyName.Text.Trim();
+            Settings.Default.setNewCompanyName = txtNewCompanyName.Text.Trim();
             if (!string.IsNullOrWhiteSpace(txtNewProjectName.Text))
             {
-                Settings1.Default.setNewProjectName = txtNewProjectName.Text.Trim();
+                Settings.Default.setNewProjectName = txtNewProjectName.Text.Trim();
             }
             if (!string.IsNullOrWhiteSpace(txtNewAreaName.Text))
             {
-                Settings1.Default.setNewAreaName = txtNewAreaName.Text.Trim();
+                Settings.Default.setNewAreaName = txtNewAreaName.Text.Trim();
             }
 
             if (e is MyEventArgs)
             {
-                Settings1.Default.setOldCompanyName = txtNewCompanyName.Text.Trim();
-                Settings1.Default.setOldProjectName = txtNewProjectName.Text.Trim();
+                Settings.Default.setOldCompanyName = txtNewCompanyName.Text.Trim();
+                Settings.Default.setOldProjectName = txtNewProjectName.Text.Trim();
             }
 
-            Settings1.Default.Save();
+            Settings.Default.Save();
             Environment.Exit(0);
         }
         #endregion
@@ -413,37 +413,37 @@ namespace ABPRenamer
         #region Start load settings
         private void FormMain_Load(object sender, EventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(Settings1.Default.setFilter))
+            if (!string.IsNullOrWhiteSpace(Settings.Default.setFilter))
             {
-                txtFilter.Text = Settings1.Default.setFilter.Trim(); ;
+                txtFilter.Text = Settings.Default.setFilter.Trim();
             }
-            if (!string.IsNullOrWhiteSpace(Settings1.Default.setOldCompanyName))
+            if (!string.IsNullOrWhiteSpace(Settings.Default.setOldCompanyName))
             {
-                txtOldCompanyName.Text = Settings1.Default.setOldCompanyName.Trim();
+                txtOldCompanyName.Text = Settings.Default.setOldCompanyName.Trim();
             }
-            if (!string.IsNullOrWhiteSpace(Settings1.Default.setOldProjectName))
+            if (!string.IsNullOrWhiteSpace(Settings.Default.setOldProjectName))
             {
-                txtOldProjectName.Text = Settings1.Default.setOldProjectName.Trim();
+                txtOldProjectName.Text = Settings.Default.setOldProjectName.Trim();
             }
-            if (!string.IsNullOrWhiteSpace(Settings1.Default.setOldAreaName))
+            if (!string.IsNullOrWhiteSpace(Settings.Default.setOldAreaName))
             {
-                txtOldAreaName.Text = Settings1.Default.setOldAreaName.Trim();
+                txtOldAreaName.Text = Settings.Default.setOldAreaName.Trim();
             }
-            if (!string.IsNullOrWhiteSpace(Settings1.Default.setRootDir))
+            if (!string.IsNullOrWhiteSpace(Settings.Default.setRootDir))
             {
-                txtRootDir.Text = Settings1.Default.setRootDir.Trim();
+                txtRootDir.Text = Settings.Default.setRootDir.Trim();
             }
-            if (!string.IsNullOrWhiteSpace(Settings1.Default.setNewCompanyName))
+            if (!string.IsNullOrWhiteSpace(Settings.Default.setNewCompanyName))
             {
-                txtNewCompanyName.Text = Settings1.Default.setNewCompanyName.Trim();
+                txtNewCompanyName.Text = Settings.Default.setNewCompanyName.Trim();
             }
-            if (!string.IsNullOrWhiteSpace(Settings1.Default.setNewProjectName))
+            if (!string.IsNullOrWhiteSpace(Settings.Default.setNewProjectName))
             {
-                txtNewProjectName.Text = Settings1.Default.setNewProjectName.Trim();
+                txtNewProjectName.Text = Settings.Default.setNewProjectName.Trim();
             }
-            if (!string.IsNullOrWhiteSpace(Settings1.Default.setNewAreaName))
+            if (!string.IsNullOrWhiteSpace(Settings.Default.setNewAreaName))
             {
-                txtNewAreaName.Text = Settings1.Default.setNewAreaName.Trim();
+                txtNewAreaName.Text = Settings.Default.setNewAreaName.Trim();
             }
         }
         #endregion
@@ -451,7 +451,7 @@ namespace ABPRenamer
         #region Restore Defaults
         private void BtnReset_Click(object sender, EventArgs e)
         {
-            txtFilter.Text = ".cs,.cshtml,.js,.ts,.csproj,.sln,.xml,.config,.DotSettings,.json";
+            txtFilter.Text = ".cs,.cshtml,.js,.ts,.csproj,.sln,.xml,.config,.DotSettings,.json,.xaml,.txt,.html,.gitignore,.ps1,.md,.plist";
         }
 
         #endregion
@@ -494,10 +494,22 @@ namespace ABPRenamer
             lbNewAreaName.Enabled = chk.Checked;
             txtNewAreaName.Enabled = chk.Checked;
         }
+
+        private void btnChangeLog_Click(object sender, EventArgs e)
+        {
+            Console.Text = string.Empty;
+            Log("Change Log\n");
+            Log("==========\n\n");
+            Log("V.1.00, 05/05/2019, Initial Version\n");
+            Log("V.2.00, 23/06/2019, Added feature to rename Mvc Area\n");
+            Log("V.2.10, 05/07/2019, Added xaml files as default, added change log button\n");
+            Log("V.2.11, 20/08/2019, Added txt, html, gitignore, ps1, md, plist files as default, added change log button\n");
+        }
   }
   public class Arguments
   {
-      public readonly string filter = ".cs,.cshtml,.js,.ts,.csproj,.sln,.xml,.config,.DotSettings";
+      public readonly string filter = ".cs,.cshtml,.js,.ts,.csproj,.sln,.xml,.config,.DotSettings,.json,.xaml,.txt,.html,.gitignore,.ps1,.md,.plist";
+      
       private string _oldCompanyName = "MyCompanyName";
       public string OldCompanyName
       {

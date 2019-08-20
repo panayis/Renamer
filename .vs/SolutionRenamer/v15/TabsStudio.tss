@@ -2,12 +2,8 @@
 <ArrayOfArrayOfArrayOfString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ArrayOfArrayOfString>
     <ArrayOfString>
-      <string>C:\Dev.ZeroFree\v.6.4\ABPRenamerV2\src\ABPRenamer\FormMain.cs</string>
-      <string>C:\Dev.ZeroFree\v.6.4\ABPRenamerV2\src\ABPRenamer\FormMain.cs</string>
-      <string>C:\Dev.ZeroFree\v.6.4\ABPRenamerV2\src\ABPRenamer\FormMain.Designer.cs</string>
-    </ArrayOfString>
-    <ArrayOfString>
-      <string>ABPRenamer</string>
+      <string>C:\Dev.ZeroFree\v.6.4\ABPRenamerV21\src\ABPRenamer\FormMain.cs</string>
+      <string>C:\Dev.ZeroFree\v.6.4\ABPRenamerV21\src\ABPRenamer\FormMain.cs</string>
     </ArrayOfString>
   </ArrayOfArrayOfString>
 </ArrayOfArrayOfArrayOfString>

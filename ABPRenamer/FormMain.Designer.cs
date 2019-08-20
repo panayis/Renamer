@@ -46,11 +46,12 @@ namespace ABPRenamer
       this.lbArrow2nd = new System.Windows.Forms.Label();
       this.lbArrow1st = new System.Windows.Forms.Label();
       this.btnSelect = new System.Windows.Forms.Button();
-      this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+      this.backgroundWorker = new System.ComponentModel.BackgroundWorker();
       this.progressBar1 = new System.Windows.Forms.ProgressBar();
       this.btnClose = new System.Windows.Forms.Button();
       this.lbTitle = new System.Windows.Forms.Label();
       this.panel1 = new System.Windows.Forms.Panel();
+      this.btnChangeLog = new System.Windows.Forms.Button();
       this.pictureBoxLogo = new System.Windows.Forms.PictureBox();
       this.label9 = new System.Windows.Forms.Label();
       this.Console = new System.Windows.Forms.TextBox();
@@ -222,13 +223,13 @@ namespace ABPRenamer
       this.btnSelect.UseVisualStyleBackColor = false;
       this.btnSelect.Click += new System.EventHandler(this.BtnSelect_Click);
       // 
-      // backgroundWorker1
+      // backgroundWorker
       // 
-      this.backgroundWorker1.WorkerReportsProgress = true;
-      this.backgroundWorker1.WorkerSupportsCancellation = true;
-      this.backgroundWorker1.DoWork += new System.ComponentModel.DoWorkEventHandler(this.BackgroundWorker1_DoWork);
-      this.backgroundWorker1.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.BackgroundWorker1_ProgressChanged);
-      this.backgroundWorker1.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.BackgroundWorker1_RunWorkerCompleted);
+      this.backgroundWorker.WorkerReportsProgress = true;
+      this.backgroundWorker.WorkerSupportsCancellation = true;
+      this.backgroundWorker.DoWork += new System.ComponentModel.DoWorkEventHandler(this.BackgroundWorker_DoWork);
+      this.backgroundWorker.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.BackgroundWorker_ProgressChanged);
+      this.backgroundWorker.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.BackgroundWorker_RunWorkerCompleted);
       // 
       // progressBar1
       // 
@@ -272,12 +273,13 @@ namespace ABPRenamer
       this.lbTitle.Name = "lbTitle";
       this.lbTitle.Size = new System.Drawing.Size(277, 20);
       this.lbTitle.TabIndex = 19;
-      this.lbTitle.Text = "AspNetZero Solution Renamer V.2.00";
+      this.lbTitle.Text = "AspNetZero Solution Renamer V.2.11";
       this.lbTitle.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
       // 
       // panel1
       // 
       this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(60)))), ((int)(((byte)(60)))));
+      this.panel1.Controls.Add(this.btnChangeLog);
       this.panel1.Controls.Add(this.pictureBoxLogo);
       this.panel1.Controls.Add(this.lbTitle);
       this.panel1.Controls.Add(this.btnClose);
@@ -286,6 +288,22 @@ namespace ABPRenamer
       this.panel1.Size = new System.Drawing.Size(739, 34);
       this.panel1.TabIndex = 20;
       this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
+      // 
+      // btnChangeLog
+      // 
+      this.btnChangeLog.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(77)))), ((int)(((byte)(77)))), ((int)(((byte)(77)))));
+      this.btnChangeLog.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+      this.btnChangeLog.Cursor = System.Windows.Forms.Cursors.Hand;
+      this.btnChangeLog.FlatAppearance.BorderSize = 0;
+      this.btnChangeLog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+      this.btnChangeLog.ForeColor = System.Drawing.Color.White;
+      this.btnChangeLog.Location = new System.Drawing.Point(577, 3);
+      this.btnChangeLog.Name = "btnChangeLog";
+      this.btnChangeLog.Size = new System.Drawing.Size(108, 31);
+      this.btnChangeLog.TabIndex = 26;
+      this.btnChangeLog.Text = "Change Log";
+      this.btnChangeLog.UseVisualStyleBackColor = false;
+      this.btnChangeLog.Click += new System.EventHandler(this.btnChangeLog_Click);
       // 
       // pictureBoxLogo
       // 
@@ -361,7 +379,8 @@ namespace ABPRenamer
       this.txtFilter.Name = "txtFilter";
       this.txtFilter.Size = new System.Drawing.Size(508, 20);
       this.txtFilter.TabIndex = 24;
-      this.txtFilter.Text = ".cs,.cshtml,.js,.ts,.csproj,.sln,.xml,.config,.DotSettings,.json";
+      this.txtFilter.Text = ".cs,.cshtml,.js,.ts,.csproj,.sln,.xml,.config,.DotSettings,.json,.xaml,.txt,.html" +
+    ",.gitignore,.ps1,.md,.plist";
       // 
       // txtRootDir
       // 
@@ -506,7 +525,7 @@ namespace ABPRenamer
         private System.Windows.Forms.Label lbArrow2nd;
         private System.Windows.Forms.Label lbArrow1st;
         private System.Windows.Forms.Button btnSelect;
-        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.ComponentModel.BackgroundWorker backgroundWorker;
         private Button btnClose;
         private ProgressBar progressBar1;
         private Label lbTitle;
@@ -546,6 +565,7 @@ namespace ABPRenamer
     private Label lbNewAreaName;
     private TextBox txtNewAreaName;
     private CheckBox chk;
+    private Button btnChangeLog;
   }
 }
 

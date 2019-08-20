@@ -26,7 +26,7 @@ namespace SolutionRenamer
 	        var configuration = builder.Build();
 
             //var fileExtensions = configuration["FileExtension"];
-            var fileExtensions = ".cs,.cshtml,.js,.ts,.csproj,.sln,.xml,.config,.DotSettings";
+            var fileExtensions = ".cs,.cshtml,.js,.ts,.csproj,.sln,.xml,.config,.DotSettings,.json,.xaml,.txt,.html,.gitignore,.ps1,.md,.plist";
 
             string[] filter = fileExtensions.Split(',');
 

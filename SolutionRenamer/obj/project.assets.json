@@ -4149,11 +4149,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Dev.ZeroFree\\v.6.4\\ABPRenamerV2\\src\\SolutionRenamer\\SolutionRenamer.csproj",
+      "projectUniqueName": "C:\\Dev.WorkSpace\\ABPRenamerV21\\src\\SolutionRenamer\\SolutionRenamer.csproj",
       "projectName": "SolutionRenamer",
-      "projectPath": "C:\\Dev.ZeroFree\\v.6.4\\ABPRenamerV2\\src\\SolutionRenamer\\SolutionRenamer.csproj",
+      "projectPath": "C:\\Dev.WorkSpace\\ABPRenamerV21\\src\\SolutionRenamer\\SolutionRenamer.csproj",
       "packagesPath": "C:\\Users\\panay\\.nuget\\packages\\",
-      "outputPath": "C:\\Dev.ZeroFree\\v.6.4\\ABPRenamerV2\\src\\SolutionRenamer\\obj\\",
+      "outputPath": "C:\\Dev.WorkSpace\\ABPRenamerV21\\src\\SolutionRenamer\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -4161,7 +4161,7 @@
       ],
       "configFilePaths": [
         "C:\\Users\\panay\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 18.2.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 19.1.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],
@@ -4171,6 +4171,7 @@
       "sources": {
         "C:\\Program Files (x86)\\DevExpress 18.2\\Components\\System\\Components\\Packages": {},
         "C:\\Program Files (x86)\\DevExpress 18.2\\DevExtreme\\System\\DevExtreme\\Bin\\AspNetCore": {},
+        "C:\\Program Files (x86)\\DevExpress 19.1\\Components\\System\\Components\\Packages": {},
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "C:\\Program Files (x86)\\Progress\\Telerik UI for Xamarin R1 2019\\Nuget": {},
         "https://api.nuget.org/v3/index.json": {}

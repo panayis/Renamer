@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyDescription("AspNetZero Source Code Renamer Tool")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("By Panic")]
-[assembly: AssemblyProduct("ABPRenamer")]
+[assembly: AssemblyProduct("ABPRenamer v.2.11")]
 [assembly: AssemblyCopyright("Copyright ©  2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -32,5 +32,5 @@ using System.Runtime.InteropServices;
 // You can specify all values, or you can use the "*" preset version number and revision number shown below
 // The method is to use "*" as follows: :
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("2.0.0.0")]
-[assembly: AssemblyFileVersion("2.0.0.0")]
+[assembly: AssemblyVersion("2.1.1.0")]
+[assembly: AssemblyFileVersion("2.1.1.0")]
