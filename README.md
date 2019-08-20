@@ -13,7 +13,7 @@ Visual Studio 2019 to build project
 
 ## Authors
 
-* **Panayiotis Hiripis** - (https://github.com/panayis/Renamer)
+* **Panayiotis** - (https://github.com/panayis)
 
 ## License
 
